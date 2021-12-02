@@ -40,3 +40,22 @@ func (s *Scanner) ToIntArray(filePath string) []int {
 
 	return result
 }
+
+func (s *Scanner) ToStringArray(filePath string) []string {
+	file, err := os.Open(filePath)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	scanner := bufio.NewScanner(file)
+	scanner.Split(bufio.ScanLines)
+	var lines []string
+
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+
+	file.Close()
+
+	return lines
+}
