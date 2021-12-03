@@ -38,3 +38,16 @@ func TestDive(t *testing.T) {
 		verticalPos,
 		horizontalPos * verticalPos)
 }
+
+func TestBinaryDiagnostic(t *testing.T) {
+	t.Skip("meant to be run locally")
+
+	scanner := NewScanner()
+	report := scanner.ToStringArray("<input-file>")
+
+	powerConsumption := getPowerConsumption(report)
+	fmt.Printf("Part 1 :: Power Consumption = %d \n", powerConsumption)
+
+	lifeSupportRating := getLifeSupportRate(report)
+	fmt.Printf("Part 2 :: Life Support Rating = %d \n", lifeSupportRating)
+}
