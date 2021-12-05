@@ -51,3 +51,16 @@ func TestBinaryDiagnostic(t *testing.T) {
 	lifeSupportRating := getLifeSupportRate(report)
 	fmt.Printf("Part 2 :: Life Support Rating = %d \n", lifeSupportRating)
 }
+
+func TestGiantSquid(t *testing.T) {
+	t.Skip("meant to be run locally")
+
+	scanner := NewScanner()
+	input := scanner.ToStringArray("<input-file>")
+
+	fastestWinningScore := findFastestWinningScore(input)
+	fmt.Printf("Part 1 :: Fastest winning score = %d \n", fastestWinningScore)
+
+	slowestWinningScore := findSlowestWinningScore(input)
+	fmt.Printf("Part 2 :: Slowest winning score = %d \n", slowestWinningScore)
+}
