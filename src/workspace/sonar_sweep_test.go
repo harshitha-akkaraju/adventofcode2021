@@ -2,6 +2,7 @@ package workspace
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 )
 
@@ -63,4 +64,15 @@ func TestGiantSquid(t *testing.T) {
 
 	slowestWinningScore := findSlowestWinningScore(input)
 	fmt.Printf("Part 2 :: Slowest winning score = %d \n", slowestWinningScore)
+}
+
+func TestLanternFish(t *testing.T) {
+	t.Skip("meant to be run locally")
+
+	scanner := NewScanner()
+	input := scanner.ToStringArray("")
+	fish := strToIntArr(strings.Split(input[0], ","))
+
+	fishCountAfterNDays := simulateLanternfish(fish, 80)
+	fmt.Printf("Part 1 :: Number of Lanternfish after 80 days %d \n", fishCountAfterNDays)
 }
